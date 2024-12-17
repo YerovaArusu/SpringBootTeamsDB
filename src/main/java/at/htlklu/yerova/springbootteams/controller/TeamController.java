@@ -18,11 +18,15 @@ public class TeamController {
     private TeamRepo teamRepo;
 
 
-    @GetMapping
+    @GetMapping("/list")
     public List<Team> getAllTeams() {
         return teamRepo.findAll();
     }
 
+    @GetMapping("listOrderedByStadium")
+    public List<Team> getAllTeamsOrderedByStadium() {
+        return teamRepo.findAllByOrderByStadium();
+    }
 
     @GetMapping("/{id}")
     public Team getTeamsById(@PathVariable int id) {

@@ -16,10 +16,12 @@ public class PlayerController {
     private PlayerRepo playerRepo;
 
 
-    @GetMapping
+    @GetMapping("/list")
     public List<Player> getAllPlayer() {
         return playerRepo.findAll();
     }
+
+
 
     @GetMapping("/team/{id}")
     public List<Player> getPlayersByTeamId(@PathVariable int id) {
@@ -35,6 +37,7 @@ public class PlayerController {
     public void deletePlayerById(@PathVariable int id) {
         playerRepo.deleteById(id);
     }
+
 
     @PutMapping("{id}")
     public Player updatePlayer(@PathVariable int id,

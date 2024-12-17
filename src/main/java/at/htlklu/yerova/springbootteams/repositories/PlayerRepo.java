@@ -8,4 +8,5 @@ import java.util.List;
 public interface PlayerRepo extends JpaRepository<Player, Integer> {
 
     public List<Player> findByTeamId(int id);
+
 }
